@@ -32,7 +32,7 @@ const errorFormat = winston.format((log) => {
 })
 
 const getLogTemplate = (log: winston.Logform.TransformableInfo): string => {
-    return `${log.timestamp as string} ${log.level}: ${log.message}`
+    return `${log.timestamp as string} ${log.level}: ${log.message} ${log?.stack != null && '\n' + log.stack}`
 }
 
 const format = winston.format.combine(

@@ -17,3 +17,12 @@ export class BadRequest extends CustomError {
     Object.setPrototypeOf(this, BadRequest.prototype);
   }
 }
+
+export class NotFound extends CustomError {
+  status = 404;
+
+  constructor(message: string) {
+    super(message);
+    Object.setPrototypeOf(this, NotFound.prototype);
+  }
+}
